@@ -96,3 +96,46 @@ document.getElementById("result")
 
 </body>
 </html>
+<audio id="clickSound">
+<source src="https://actions.google.com/sounds/v1/cartoon/pop.ogg" type="audio/ogg">
+</audio>
+
+<audio id="magicSound">
+<source src="https://actions.google.com/sounds/v1/magic/magic_chime.ogg" type="audio/ogg">
+</audio>
+function predict(){
+
+// تشغيل صوت السحر
+document.getElementById("magicSound").play();
+
+let predictions = [
+
+"💰 ستربح شيئًا قريبًا",
+"🎮 ستصبح لاعبًا محترفًا",
+"🚀 مشروعك سينجح",
+"🔥 مفاجأة جميلة بانتظارك",
+"📱 ستتعلم مهارة جديدة",
+"😄 يوم سعيد يقترب منك",
+"⭐ الحظ معك اليوم",
+"🎯 هدفك القادم سيتحقق"
+
+];
+
+let random =
+Math.floor(Math.random()*predictions.length);
+
+document.getElementById("result")
+.innerHTML = predictions[random];
+
+<div class="hand" onclick="clickHand(); predict()">
+✋
+</div>
+function clickHand(){
+document.getElementById("clickSound").play();
+
+// اهتزاز الهاتف (اختياري)
+if(navigator.vibrate){
+navigator.vibrate(100);
+}
+
+}
